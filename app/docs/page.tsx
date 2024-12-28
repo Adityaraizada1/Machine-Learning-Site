@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
@@ -63,6 +64,7 @@ const Docs = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

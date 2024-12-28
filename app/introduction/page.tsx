@@ -22,7 +22,7 @@ const IntroductionPage: React.FC = () => {
             <li>Making predictions</li>
           </ul>
         </div>
-        <img src="https://via.placeholder.com/600x300" alt="Machine Learning" class="rounded-lg shadow-md w-full" />
+        <img src="/banner.jpg" alt="Machine Learning Process" class="w-full rounded-lg shadow-md" />
       </div>
     `,
   });

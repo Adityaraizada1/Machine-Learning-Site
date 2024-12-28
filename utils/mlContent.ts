@@ -50,7 +50,7 @@ export const mlTopics: Record<TopicKey, { heading: string; content: string }> = 
         </p>
 
         <div class="mt-6">
-          <img src="https://via.placeholder.com/600x300" alt="AI vs ML Venn Diagram" class="w-full rounded-lg shadow-md" />
+          <img src="/banner.jpg" alt="Machine Learning Process" class="w-full rounded-lg shadow-md" />
         </div>
       </div>
     `
@@ -74,7 +74,7 @@ export const mlTopics: Record<TopicKey, { heading: string; content: string }> = 
         </div>
 
         <div class="mt-6">
-          <img src="https://via.placeholder.com/600x300" alt="Comparison of ML Languages" class="w-full rounded-lg shadow-md" />
+          <img src="/banner.jpg" alt="Machine Learning Process" class="w-full rounded-lg shadow-md" />
         </div>
       </div>
     `
@@ -101,7 +101,7 @@ export const mlTopics: Record<TopicKey, { heading: string; content: string }> = 
         </p>
 
         <div class="mt-6">
-          <img src="https://via.placeholder.com/600x300" alt="TensorFlow.js in Action" class="w-full rounded-lg shadow-md" />
+          <img src="/banner.jpg" alt="Machine Learning Process" class="w-full rounded-lg shadow-md" />
         </div>
       </div>
     `
@@ -128,7 +128,7 @@ export const mlTopics: Record<TopicKey, { heading: string; content: string }> = 
         </p>
 
         <div class="mt-6">
-          <img src="https://via.placeholder.com/600x300" alt="Examples of ML" class="w-full rounded-lg shadow-md" />
+          <img src="/banner.jpg" alt="Machine Learning Process" class="w-full rounded-lg shadow-md" />
         </div>
       </div>
     `

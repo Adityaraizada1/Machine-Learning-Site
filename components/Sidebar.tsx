@@ -40,7 +40,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen, setContent }) => {
       >
         {/* Sidebar header */}
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold">My ML School</h2>
+          <h2 className="text-2xl font-bold">ML School</h2>
 
           {/* Close button */}
           <button onClick={toggleSidebar} className="md:hidden text-white" aria-label="Close sidebar">

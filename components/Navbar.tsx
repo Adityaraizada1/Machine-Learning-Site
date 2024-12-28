@@ -16,7 +16,7 @@ const Header: React.FC = () => {
       {/* Header with Starry Background */}
       <header className="flex items-center justify-between p-4 md:p-6 bg-black fixed top-0 left-0 right-0 z-20 shadow-lg">
         <div className="text-2xl font-bold text-white">
-          <Link href="/">YourBrand</Link>
+          <Link href="/">ML</Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -37,13 +37,13 @@ const Header: React.FC = () => {
             <FaBook className="text-base" /> Docs
           </Link>
           <Link
-            href="/source"
+            href="/testing"
             className="text-white text-sm flex items-center gap-1 hover:text-blue-200"
           >
             <FaGithub className="text-base" /> Source
           </Link>
           <Link
-            href="/about"
+            href="/testing"
             className="text-white text-sm flex items-center gap-1 hover:text-blue-200"
           >
             <FaInfoCircle className="text-base" /> About
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
         className={`fixed top-0 left-0 h-full w-3/4 bg-black z-30 transition-transform transform md:hidden ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="p-4 flex justify-between items-center border-b border-gray-700">
-          <div className="text-2xl font-bold text-white">YourBrand</div>
+          <div className="text-2xl font-bold text-white">ML</div>
           <div className="cursor-pointer" onClick={toggleMenu}>
           </div>
         </div>
@@ -69,14 +69,14 @@ const Header: React.FC = () => {
             <FaBook className="text-base" /> Docs
           </Link>
           <Link
-            href="/source"
+            href="/testing"
             className="text-white text-lg flex items-center gap-2 hover:text-blue-400"
             onClick={toggleMenu}
           >
             <FaGithub className="text-base" /> Source
           </Link>
           <Link
-            href="/about"
+            href="/testing"
             className="text-white text-lg flex items-center gap-2 hover:text-blue-400"
             onClick={toggleMenu}
           >
