@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
 
           {/* Bottom section: Copyright */}
           <div className="mt-6 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} ML. Made with Love.</p>
+            <p> {new Date().getFullYear()} ML. Made with Love.</p>
           </div>
         </div>
       </footer>
