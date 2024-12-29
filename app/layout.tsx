@@ -20,7 +20,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Machine Learning | One on One",
+  title: "ML | One on One",
   description: "Learing Machine Learning with One on One",
 };
 
