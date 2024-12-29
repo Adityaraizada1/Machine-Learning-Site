@@ -1,9 +1,17 @@
-export type TopicKey = "What is ML?" | "ML & AI" | "ML Languages" | "ML JavaScript" | "ML Examples";
+export type TopicKey =
+  | "What is ML?"
+  | "ML & AI"
+  | "ML Languages"
+  | "ML JavaScript"
+  | "ML Examples"
+  | "ML Linear Graphs"
+  | "ML Scatter Plots";
 
-export const mlTopics: Record<TopicKey, { heading: string; content: string }> = {
-  "What is ML?": {
-    heading: "What is Machine Learning?",
-    content: `
+export const mlTopics: Record<TopicKey, { heading: string; content: string }> =
+  {
+    "What is ML?": {
+      heading: "What is Machine Learning?",
+      content: `
       <div class="space-y-6">
         <p class="text-lg text-gray-800">
           Machine Learning (ML) is a field of Artificial Intelligence (AI) that focuses on developing algorithms that allow computers to learn from and make decisions based on data. Instead of following explicit instructions, a machine can improve its performance over time by identifying patterns and making data-driven predictions.
@@ -27,11 +35,11 @@ export const mlTopics: Record<TopicKey, { heading: string; content: string }> = 
           <img src="/banner.jpg" alt="Machine Learning Process" class="w-full rounded-lg shadow-md" />
         </div>
       </div>
-    `
-  },
-  "ML & AI": {
-    heading: "Machine Learning and Artificial Intelligence",
-    content: `
+    `,
+    },
+    "ML & AI": {
+      heading: "Machine Learning and Artificial Intelligence",
+      content: `
       <div class="space-y-6">
         <p class="text-lg text-gray-800">
           Artificial Intelligence (AI) refers to the simulation of human intelligence in machines that can perform tasks typically requiring human cognition, such as learning, reasoning, and problem-solving. Machine Learning (ML) is a subfield of AI that uses data to enable computers to learn and improve over time without explicit programming.
@@ -53,11 +61,11 @@ export const mlTopics: Record<TopicKey, { heading: string; content: string }> = 
           <img src="/banner.jpg" alt="Machine Learning Process" class="w-full rounded-lg shadow-md" />
         </div>
       </div>
-    `
-  },
-  "ML Languages": {
-    heading: "Machine Learning Languages",
-    content: `
+    `,
+    },
+    "ML Languages": {
+      heading: "Machine Learning Languages",
+      content: `
       <div class="space-y-6">
         <p class="text-lg text-gray-800">
           Certain programming languages are better suited for Machine Learning due to their support for data manipulation, model training, and deep learning frameworks.
@@ -77,11 +85,11 @@ export const mlTopics: Record<TopicKey, { heading: string; content: string }> = 
           <img src="/banner.jpg" alt="Machine Learning Process" class="w-full rounded-lg shadow-md" />
         </div>
       </div>
-    `
-  },
-  "ML JavaScript": {
-    heading: "Machine Learning with JavaScript",
-    content: `
+    `,
+    },
+    "ML JavaScript": {
+      heading: "Machine Learning with JavaScript",
+      content: `
       <div class="space-y-6">
         <p class="text-lg text-gray-800">
           JavaScript is often overlooked for Machine Learning, but it is an excellent language for developing interactive web-based ML applications. Libraries like <strong>TensorFlow.js</strong> allow developers to run models directly in the browser without the need for backend processing.
@@ -104,11 +112,11 @@ export const mlTopics: Record<TopicKey, { heading: string; content: string }> = 
           <img src="/banner.jpg" alt="Machine Learning Process" class="w-full rounded-lg shadow-md" />
         </div>
       </div>
-    `
-  },
-  "ML Examples": {
-    heading: "Examples of Machine Learning",
-    content: `
+    `,
+    },
+    "ML Examples": {
+      heading: "Examples of Machine Learning",
+      content: `
       <div class="space-y-6">
         <p class="text-lg text-gray-800">
           Machine Learning is integrated into many technologies we use every day. Here are a few examples:
@@ -131,6 +139,61 @@ export const mlTopics: Record<TopicKey, { heading: string; content: string }> = 
           <img src="/banner.jpg" alt="Machine Learning Process" class="w-full rounded-lg shadow-md" />
         </div>
       </div>
-    `
-  }
-};
+    `,
+    },
+    "ML Linear Graphs": {
+      heading: "Machine Learning with Linear Graphs",
+      content: `
+      <div class="space-y-6">
+        <p class="text-lg text-gray-800">
+          Linear graphs are a crucial component in Machine Learning, used primarily in regression tasks to represent relationships between variables. Below are some examples where ML models utilize linear graphs:
+        </p>
+
+        <div class="bg-gray-50 p-4 rounded-lg shadow-lg space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-800">Applications of Linear Graphs in ML</h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Linear Regression:</strong> This is one of the simplest and most common algorithms in machine learning, where a straight line is used to model the relationship between independent and dependent variables. It's often used for predicting continuous values like house prices or sales trends.</li>
+            <li><strong>Trend Prediction:</strong> Linear graphs are used to predict future trends in data, such as stock market prices, weather forecasting, or demand forecasting, based on historical data points.</li>
+            <li><strong>Optimizing Performance:</strong> In optimization problems, linear graphs help identify the best solution that satisfies a set of constraints. This is commonly used in logistics, resource allocation, and production planning.</li>
+          </ul>
+        </div>
+
+        <p class="text-lg text-gray-800">
+          **Example**: In a linear regression model, a linear graph is used to represent the relationship between a dataset's features (independent variables) and the target variable (dependent variable), allowing us to make predictions.
+        </p>
+
+        <div class="mt-6">
+          <img src="/banner.jpg" alt="Machine Learning Linear Graph" class="w-full rounded-lg shadow-md" />
+        </div>
+      </div>
+    `,
+    },
+
+    "ML Scatter Plots": {
+      heading: "ML Scatter Plots",
+      content: `
+      <div class="space-y-6">
+        <p class="text-lg text-gray-800">
+          Scatter plots are widely used in Machine Learning to visualize and analyze relationships between two continuous variables. They are essential tools for understanding correlations, trends, and outliers in datasets. Here are some key use cases of scatter plots in machine learning:
+        </p>
+
+        <div class="bg-gray-50 p-4 rounded-lg shadow-lg space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-800">Scatter Plot Use Cases in ML</h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Data Visualization:</strong> Scatter plots help in visualizing the relationship between two variables in a dataset. For example, scatter plots can be used to show how the number of hours studied relates to exam scores.</li>
+            <li><strong>Identifying Trends and Patterns:</strong> By plotting data points on a scatter plot, ML models can easily identify patterns, such as positive or negative correlations between variables, which can be used to develop predictive models.</li>
+            <li><strong>Outlier Detection:</strong> Scatter plots can help identify anomalies or outliers in data, which might indicate errors or exceptional cases that need to be treated differently in model training.</li>
+          </ul>
+        </div>
+
+        <p class="text-lg text-gray-800">
+          **Example**: In a supervised learning task like linear regression, scatter plots are often used to visualize the relationship between the independent variable (e.g., hours studied) and the dependent variable (e.g., exam scores), making it easier to see the linear trend.
+        </p>
+
+        <div class="mt-6">
+          <img src="/banner.jpg" alt="Scatter Plot Example" class="w-full rounded-lg shadow-md" />
+        </div>
+      </div>
+    `,
+    },
+  };

@@ -55,7 +55,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen, setContent }) => {
               size={18}
               className="text-gray-300 hover:text-gray-100 cursor-pointer inline-block mr-2"
             />
-            <span className="text-sm">Return to Doc</span>
+            <span className="text-sm">Return to Docs</span>
           </Link>
         </div>
 

@@ -1,6 +1,5 @@
 "use client";
 
-// app/components/Preloader.tsx
 import { useState, useEffect } from 'react';
 
 const Preloader = () => {
@@ -24,16 +23,17 @@ const Preloader = () => {
   }, [progress]);
 
   return (
-    <div className="flex justify-center items-center h-screen flex-col">
+    <div className="flex justify-center items-center h-screen flex-col bg-black/[0.9]">
+      {/* Progress Bar */}
       {!isCompleted ? (
-        <div className="w-72 h-2 bg-gray-300 rounded-full">
+        <div className="w-72 h-2 bg-neutral-700 rounded-full">
           <div
-            className="h-full bg-blue-500 rounded-full"
+            className="h-full bg-gradient-to-r from-neutral-500 to-neutral-300 rounded-full transition-all duration-300"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
       ) : (
-        <div className="text-4xl font-bold text-blue-500">
+        <div className="text-4xl font-semibold text-white mt-4">
           Progress Completed!
         </div>
       )}
