@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react"
 import { Geist, Geist_Mono, Manrope } from "next/font/google"; // Importing Manrope font
 import "./globals.css";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} antialiased`} // Apply the Manrope font
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
