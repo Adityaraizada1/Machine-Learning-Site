@@ -51,7 +51,7 @@ const Docs = () => {
               Dive into advanced topics like neural networks, NLP, and AI ethics.
             </p>
             <Link
-              href="/advanced-soon"
+              href="/soon"
               className="flex items-center justify-center text-blue-400 font-semibold hover:text-blue-500 transition duration-300"
             >
               Read More <FaArrowRight className="ml-2 transition-transform transform group-hover:translate-x-1" />
@@ -67,7 +67,7 @@ const Docs = () => {
               Explore our comprehensive API documentation to integrate AI features effortlessly.
             </p>
             <Link
-              href="/api-soon"
+              href="/soon"
               className="flex items-center justify-center text-blue-400 font-semibold hover:text-blue-500 transition duration-300"
             >
               Read More <FaArrowRight className="ml-2 transition-transform transform group-hover:translate-x-1" />
