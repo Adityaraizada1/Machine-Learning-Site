@@ -7,6 +7,7 @@ import { RiNextjsLine } from "react-icons/ri";
 import { TbBrandVscode } from "react-icons/tb";
 import { MdFilter9Plus } from "react-icons/md";
 import React, { useEffect } from "react";
+import Footer from "@/components/Footer";
 
 const SourcePage = () => {
     // Change document title when Source page is loaded
@@ -144,6 +145,7 @@ const SourcePage = () => {
                         </p>
                     </div>
                 </div>
+                <Footer />
             </section>
         </>
     );

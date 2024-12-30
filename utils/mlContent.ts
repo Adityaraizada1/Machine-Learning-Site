@@ -5,7 +5,18 @@ export type TopicKey =
   | "ML JavaScript"
   | "ML Examples"
   | "ML Linear Graphs"
-  | "ML Scatter Plots";
+  | "ML Scatter Plots"
+  | "ML Perceptrons"
+  | "ML Recognition"
+  | "ML Training"
+  | "ML Testing"
+  | "ML Learning"
+  | "ML Terminology"
+  | "ML Data"
+  | "ML Clustering"
+  | "ML Regressions"
+  | "ML Deep Learning"
+  | "ML Brain.js";
 
 export const mlTopics: Record<TopicKey, { heading: string; content: string }> =
   {
@@ -196,4 +207,218 @@ export const mlTopics: Record<TopicKey, { heading: string; content: string }> =
       </div>
     `,
     },
-  };
+    "ML Perceptrons": {
+    heading: "Understanding Perceptrons in Machine Learning",
+    content: `
+      <div class="space-y-6">
+        <p class="text-lg text-gray-800">
+          A perceptron is the simplest form of a neural network used for binary classification tasks. It takes inputs, processes them using weights, and produces an output based on an activation function.
+        </p>
+        
+        <div class="bg-gray-50 p-4 rounded-lg shadow-lg space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-800">How It Works</h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Inputs:</strong> Features of the data, e.g., numbers or categories.</li>
+            <li><strong>Weights:</strong> Each input has an associated weight to signify importance.</li>
+            <li><strong>Activation:</strong> A function that determines the final output.</li>
+          </ul>
+        </div>
+
+        <div class="mt-6">
+          <pre class="bg-black text-white p-4 rounded-lg">
+            <code>
+// Example: Simple Perceptron
+inputs = [1, 0];
+weights = [0.5, -0.5];
+bias = 0.2;
+output = inputs[0] * weights[0] + inputs[1] * weights[1] + bias;
+console.log(output); // Result depends on inputs and weights
+            </code>
+          </pre>
+        </div>
+      </div>
+    `,
+  },
+  "ML Recognition": {
+    heading: "Machine Learning for Pattern Recognition",
+    content: `
+      <div class="space-y-6">
+        <p class="text-lg text-gray-800">
+          Pattern recognition is the ability of machines to identify and classify patterns in data. For example, recognizing faces in photos or classifying emails as spam.
+        </p>
+
+        <div class="bg-gray-50 p-4 rounded-lg shadow-lg space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-800">Common Applications</h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Face Recognition:</strong> Identifying individuals in images.</li>
+            <li><strong>Speech Recognition:</strong> Converting spoken words to text.</li>
+            <li><strong>Handwriting Recognition:</strong> Digitizing handwritten notes.</li>
+          </ul>
+        </div>
+
+        <p class="text-lg text-gray-800">
+          **Example**: A camera app that detects your face and unlocks your phone.
+        </p>
+      </div>
+    `,
+  },
+  "ML Training": {
+    heading: "Training Models in Machine Learning",
+    content: `
+      <div class="space-y-6">
+        <p class="text-lg text-gray-800">
+          Training a model involves feeding it data to help it learn and improve. This is like teaching a student with examples so they can solve problems in the future.
+        </p>
+
+        <div class="bg-gray-50 p-4 rounded-lg shadow-lg space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-800">Steps in Training</h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Prepare Data:</strong> Organize and clean the dataset.</li>
+            <li><strong>Initialize Model:</strong> Set up the basic framework.</li>
+            <li><strong>Train:</strong> Use algorithms like Gradient Descent to optimize performance.</li>
+          </ul>
+        </div>
+
+        <div class="mt-6">
+          <pre class="bg-black text-white p-4 rounded-lg">
+            <code>
+// Example: Training a Model
+const trainingData = [{input: [0, 0], output: 0}, {input: [1, 1], output: 1}];
+let weights = [0.5, 0.5];
+function train(data, weights) {
+  data.forEach(({input, output}) => {
+    let prediction = input[0] * weights[0] + input[1] * weights[1];
+    // Update weights based on error
+    weights[0] += 0.1 * (output - prediction) * input[0];
+    weights[1] += 0.1 * (output - prediction) * input[1];
+  });
+}
+train(trainingData, weights);
+            </code>
+          </pre>
+        </div>
+      </div>
+    `,
+  },
+  "ML Testing": {
+    heading: "Testing Machine Learning Models",
+    content: `
+      <div class="space-y-6">
+        <p class="text-lg text-gray-800">
+          Testing a machine learning model involves evaluating its performance on unseen data to ensure it generalizes well.
+        </p>
+
+        <div class="bg-gray-50 p-4 rounded-lg shadow-lg space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-800">Testing Metrics</h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Accuracy:</strong> Percentage of correct predictions.</li>
+            <li><strong>Precision:</strong> How many predicted positives are correct?</li>
+            <li><strong>Recall:</strong> How many actual positives were correctly predicted?</li>
+          </ul>
+        </div>
+      </div>
+    `,
+  },
+  "ML Learning": {
+    heading: "Machine Learning Learning",
+    content: `
+    <div class="space-y-6">
+      <p class="text-lg text-gray-800">
+        Machine Learning (ML) is a field of Artificial Intelligence (AI) that focuses on developing algorithms that allow computers to learn from and make decisions based on data.
+      </p>
+    </div>
+  `,
+  },
+  "ML Terminology": {
+    heading: "Machine Learning Terminology",
+    content: `
+    <div class="space-y-6">
+      <p class="text-lg text-gray-800">
+        Understanding the key terms in Machine Learning is crucial for grasping the concepts and techniques used in the field.
+      </p>
+    </div>
+  `,
+  },
+  "ML Data": {
+    heading: "Machine Learning Data",
+    content: `
+    <div class="space-y-6">
+      <p class="text-lg text-gray-800">
+        Data is the foundation of Machine Learning. It is used to train models and make predictions.
+      </p>
+    </div>
+  `,
+  },
+  "ML Clustering": {
+    heading: "What is Clustering in Machine Learning?",
+    content: `
+      <div class="space-y-6">
+        <p class="text-lg text-gray-800">
+          Clustering is the process of grouping data points so that points in the same group are more similar to each other than to points in other groups.
+        </p>
+
+        <div class="bg-gray-50 p-4 rounded-lg shadow-lg space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-800">Example Algorithms</h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>K-Means:</strong> Groups data into 'k' clusters.</li>
+            <li><strong>Hierarchical Clustering:</strong> Builds a hierarchy of clusters.</li>
+          </ul>
+        </div>
+      </div>
+    `,
+  },
+  "ML Regressions": {
+    heading: "Working on Regressions Page.",
+    content: `
+      <div class="space-y-6">
+        <p class="text-lg text-gray-800">
+          Working on Regressions Page.
+        </p>
+
+        <div class="bg-gray-50 p-4 rounded-lg shadow-lg space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-800"></h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong></strong></li>
+            <li><strong></strong></li>
+          </ul>
+        </div>
+      </div>
+    `,
+  },
+  "ML Deep Learning": {
+    heading: "Working on Deep Learning Page.",
+    content: `
+      <div class="space-y-6">
+        <p class="text-lg text-gray-800">
+          Working on Learning Page.
+        </p>
+
+        <div class="bg-gray-50 p-4 rounded-lg shadow-lg space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-800"></h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong></strong></li>
+            <li><strong></strong></li>
+          </ul>
+        </div>
+      </div>
+    `,
+  },
+  "ML Brain.js": {
+    heading: "Working on ML Brain.js Page.",
+    content: `
+      <div class="space-y-6">
+        <p class="text-lg text-gray-800">
+          Working on ML Brain.js Page.
+        </p>
+
+        <div class="bg-gray-50 p-4 rounded-lg shadow-lg space-y-4">
+          <h2 class="text-2xl font-semibold text-gray-800"></h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong></strong></li>
+            <li><strong></strong></li>
+          </ul>
+        </div>
+      </div>
+    `,
+  },
+};

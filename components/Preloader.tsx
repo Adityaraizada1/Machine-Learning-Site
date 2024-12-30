@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const Preloader = () => {
   const [progress, setProgress] = useState(0);
@@ -17,7 +17,7 @@ const Preloader = () => {
           }
           return prevProgress + 1; // Increment progress
         });
-      }, 30); // Adjust the interval for speed (lower value = faster)
+      }, 25); // Adjust the interval for a smoother effect
       return () => clearInterval(timer); // Cleanup the interval on component unmount
     }
   }, [progress]);
@@ -28,12 +28,12 @@ const Preloader = () => {
       {!isCompleted ? (
         <div className="w-72 h-2 bg-neutral-700 rounded-full">
           <div
-            className="h-full bg-gradient-to-r from-neutral-500 to-neutral-300 rounded-full transition-all duration-300"
+            className="h-full bg-gradient-to-r from-blue-500 to-blue-300 rounded-full transition-all duration-300"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
       ) : (
-        <div className="text-4xl font-semibold text-white mt-4">
+        <div className="text-4xl font-semibold text-white mt-4 animate__animated animate__fadeIn animate__delay-1s">
           Progress Completed!
         </div>
       )}

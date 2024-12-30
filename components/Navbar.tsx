@@ -22,9 +22,7 @@ const Header: React.FC = () => {
       {/* Header with Starry Background */}
       <header className="flex items-center justify-between p-4 md:p-6 bg-black fixed top-0 left-0 right-0 z-20 shadow-lg">
         <div className="text-2xl font-bold text-white">
-          <Link href="/">
-            ML
-          </Link>
+          <Link href="/">ML</Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -39,19 +37,21 @@ const Header: React.FC = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 items-center">
           {/* Docs Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={toggleDocsDropdown}
-            onMouseLeave={toggleDocsDropdown}
-          >
-            <Link
-              href="/docs"
+          <div className="relative">
+            <button
+              onClick={toggleDocsDropdown}
               className="text-white text-sm flex items-center gap-1 hover:text-blue-200 transition-colors duration-300"
             >
               <FcDocument className="text-base" /> Docs
-            </Link>
+            </button>
             {isDocsDropdownOpen && (
               <div className="absolute left-0 mt-2 bg-black text-white shadow-md rounded-md w-48">
+                <Link
+                  href="/docs"
+                  className="block px-4 py-2 text-sm hover:bg-gray-800 transition-colors duration-300"
+                >
+                  Go to Docs
+                </Link>
                 <Link
                   href="/introduction"
                   className="block px-4 py-2 text-sm hover:bg-gray-800 transition-colors duration-300"

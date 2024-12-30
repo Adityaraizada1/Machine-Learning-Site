@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link'; // Import Link for navigation
-import { FaBars, FaTimes} from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import { TbDoorExit } from "react-icons/tb";
 import { mlTopics, TopicKey } from '@/utils/mlContent'; // Ensure the correct import path
 
@@ -60,7 +60,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen, setContent }) => {
         </div>
 
         {/* Navigation links */}
-        <nav>
+        <nav className="overflow-y-auto max-h-[80vh]"> {/* Added scrolling behavior */}
           <ul>
             {Object.keys(mlTopics).map((topic) => (
               <li key={topic} className="mb-2">

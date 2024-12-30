@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image"
 import React, { useEffect } from "react";
 import { MdVerified } from "react-icons/md";
+import Footer from "@/components/Footer";
 
 const AboutUs = () => {
 
@@ -153,6 +154,7 @@ const AboutUs = () => {
                     </p>
                 </div>
             </div>
+            <Footer />
         </section></>
     );
 };

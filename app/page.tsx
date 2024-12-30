@@ -29,13 +29,13 @@ const Home = () => {
             {/* Background Shooting Stars */}
             <ShootingStars />
             <StarsBackground />
-            
-            <div className="relative z-10 text-center w-full max-w-3xl">
+
+            <div className="relative z-10 text-center w-full max-w-3xl px-4 sm:px-6 md:px-8">
               {/* Heading */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-5xl font-bold mb-6 leading-tight animate__animated animate__fadeIn animate__delay-1s">
                 Build<FlipWords words={words} className="text-white" />
                 <br />
-                <span className="block mt-2 text-lg sm:text-xl md:text-2xl">
+                <span className="block mt-2 text-lg sm:text-xl md:text-2xl animate__animated animate__fadeIn animate__delay-2s">
                   Level up your AI skills and own the future.
                 </span>
               </h1>
@@ -43,7 +43,7 @@ const Home = () => {
               {/* Call to Action Button */}
               <Link
                 href="/docs"
-                className="mt-6 inline-block py-2 px-4 bg-blue-500 text-sm font-semibold rounded-full border-2 border-blue-500 hover:bg-blue-700 hover:border-blue-700 transition duration-300"
+                className="mt-6 inline-block py-3 px-6 bg-blue-500 text-sm sm:text-base font-semibold rounded-full border-2 border-blue-500 hover:bg-blue-700 hover:border-blue-700 transition duration-300 transform hover:scale-105"
               >
                 <span className="flex items-center gap-2 justify-center">
                   Read More{" "}
@@ -51,6 +51,16 @@ const Home = () => {
                 </span>
               </Link>
             </div>
+
+            {/* Footer (Terms and Conditions) */}
+            <footer className="absolute bottom-0 w-full py-4 text-center text-sm sm:text-base">
+              <Link
+                href="/terms"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                Terms and Conditions
+              </Link>
+            </footer>
           </div>
         </>
       )}
