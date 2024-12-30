@@ -7,9 +7,14 @@ import Link from "next/link";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDocsDropdownOpen, setIsDocsDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleDocsDropdown = () => {
+    setIsDocsDropdownOpen(!isDocsDropdownOpen);
   };
 
   return (
@@ -33,12 +38,42 @@ const Header: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6 items-center">
-          <Link
-            href="/docs"
-            className="text-white text-sm flex items-center gap-1 hover:text-blue-200 transition-colors duration-300"
+          {/* Docs Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={toggleDocsDropdown}
+            onMouseLeave={toggleDocsDropdown}
           >
-            <FcDocument className="text-base" /> Docs
-          </Link>
+            <Link
+              href="/docs"
+              className="text-white text-sm flex items-center gap-1 hover:text-blue-200 transition-colors duration-300"
+            >
+              <FcDocument className="text-base" /> Docs
+            </Link>
+            {isDocsDropdownOpen && (
+              <div className="absolute left-0 mt-2 bg-black text-white shadow-md rounded-md w-48">
+                <Link
+                  href="/introduction"
+                  className="block px-4 py-2 text-sm hover:bg-gray-800 transition-colors duration-300"
+                >
+                  Getting Started
+                </Link>
+                <Link
+                  href="/api-references"
+                  className="block px-4 py-2 text-sm hover:bg-gray-800 transition-colors duration-300"
+                >
+                  API References
+                </Link>
+                <Link
+                  href="/soon"
+                  className="block px-4 py-2 text-sm hover:bg-gray-800 transition-colors duration-300"
+                >
+                  Advanced Guides
+                </Link>
+              </div>
+            )}
+          </div>
+
           <Link
             href="/source"
             className="text-white text-sm flex items-center gap-1 hover:text-blue-200 transition-colors duration-300"

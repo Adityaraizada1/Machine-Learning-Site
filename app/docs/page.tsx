@@ -74,22 +74,6 @@ const Docs = () => {
             </Link>
           </div>
 
-          {/* Card 4 - Tutorials */}
-          <div className="bg-gray-800 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 group">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-4 group-hover:text-blue-400 transition duration-300">
-              Tutorials
-            </h2>
-            <p className="text-sm sm:text-md text-gray-400 mb-4">
-              Step-by-step guides to help you master essential machine learning techniques.
-            </p>
-            <Link
-              href="/soon"
-              className="flex items-center justify-center text-blue-400 font-semibold hover:text-blue-500 transition duration-300"
-            >
-              Read More <FaArrowRight className="ml-2 transition-transform transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-
           {/* Card 5 - Community Support */}
           <div className="bg-gray-800 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 group">
             <h2 className="text-xl sm:text-2xl font-semibold mb-4 group-hover:text-blue-400 transition duration-300">
