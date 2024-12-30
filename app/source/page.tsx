@@ -2,8 +2,10 @@
 
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
-import { FaGithub, FaReact, FaCss3, FaNodeJs, FaSlack} from "react-icons/fa"; // Added Next.js icon
+import { FaGithub, FaReact, FaCss3, FaNodeJs, FaSlack } from "react-icons/fa"; // Added Next.js icon
 import { RiNextjsLine } from "react-icons/ri";
+import { TbBrandVscode } from "react-icons/tb";
+import { MdFilter9Plus } from "react-icons/md";
 import React, { useEffect } from "react";
 
 const SourcePage = () => {
@@ -79,14 +81,38 @@ const SourcePage = () => {
                             </div>
                             {/* Tool 5 - Next.js */}
                             <div className="flex flex-col items-center text-center space-y-3">
-                                <RiNextjsLine className="text-4xl text-black" />
+                                <RiNextjsLine className="text-4xl text-white" />
                                 <div>
                                     <h3 className="text-lg font-semibold">Next.js</h3>
                                     <p className="text-sm text-gray-300">A powerful React framework for building fast, scalable, and optimized web applications.</p>
                                 </div>
                             </div>
+                            {/* Tool 6 - GitHub */}
+                            <div className="flex flex-col items-center text-center space-y-3">
+                                <FaGithub className="text-4xl text-gray-300" />
+                                <div>
+                                    <h3 className="text-lg font-semibold">GitHub</h3>
+                                    <p className="text-sm text-gray-300">A platform for version control and collaboration, hosting our project's codebase securely.</p>
+                                </div>
+                            </div>
+                            {/* Tool 8 - VS Code */}
+                            <div className="flex flex-col items-center text-center space-y-3">
+                                <TbBrandVscode className="text-4xl text-blue-500" />
+                                <div>
+                                    <h3 className="text-lg font-semibold">VS Code</h3>
+                                    <p className="text-sm text-gray-300">A powerful code editor with extensive support for debugging, plugins, and development environments.</p>
+                                </div>
+                            </div>
+                            {/* Tool 8 - VS Code */}
+                            <div className="flex flex-col items-center text-center space-y-3">
+                                <MdFilter9Plus className="text-4xl text-white" />
+                                <div>
+                                    <h3 className="text-lg font-semibold">Many more</h3>
+                                </div>
+                            </div>
                         </div>
                     </div>
+
 
                     {/* GitHub Repo Section */}
                     <div className="text-center mt-12">

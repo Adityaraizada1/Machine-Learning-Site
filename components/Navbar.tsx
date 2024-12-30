@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaBars, FaTimes, FaBook, FaGithub, FaInfoCircle } from "react-icons/fa";
+import { FaBars, FaTimes, FaGithub } from "react-icons/fa";
+import { FcFaq, FcAbout, FcDocument, FcBusinessman } from "react-icons/fc";
 import Link from "next/link";
 
 const Header: React.FC = () => {
@@ -36,7 +37,7 @@ const Header: React.FC = () => {
             href="/docs"
             className="text-white text-sm flex items-center gap-1 hover:text-blue-200 transition-colors duration-300"
           >
-            <FaBook className="text-base" /> Docs
+            <FcDocument className="text-base" /> Docs
           </Link>
           <Link
             href="/source"
@@ -48,7 +49,19 @@ const Header: React.FC = () => {
             href="/about"
             className="text-white text-sm flex items-center gap-1 hover:text-blue-200 transition-colors duration-300"
           >
-            <FaInfoCircle className="text-base" /> About
+            <FcAbout className="text-base" /> About
+          </Link>
+          <Link
+            href="/faq"
+            className="text-white text-sm flex items-center gap-1 hover:text-blue-200 transition-colors duration-300"
+          >
+            <FcFaq className="text-base" /> FAQs
+          </Link>
+          <Link
+            href="/community"
+            className="text-white text-sm flex items-center gap-1 hover:text-blue-200 transition-colors duration-300"
+          >
+            <FcBusinessman className="text-base" /> Community
           </Link>
         </nav>
       </header>
@@ -69,7 +82,7 @@ const Header: React.FC = () => {
             className="text-white text-lg flex items-center gap-2 hover:text-blue-400 transition-colors duration-300"
             onClick={toggleMenu}
           >
-            <FaBook className="text-base" /> Docs
+            <FcDocument className="text-base" /> Docs
           </Link>
           <Link
             href="/source"
@@ -83,7 +96,21 @@ const Header: React.FC = () => {
             className="text-white text-lg flex items-center gap-2 hover:text-blue-400 transition-colors duration-300"
             onClick={toggleMenu}
           >
-            <FaInfoCircle className="text-base" /> About
+            <FcAbout className="text-base" /> About
+          </Link>
+          <Link
+            href="/faq"
+            className="text-white text-lg flex items-center gap-2 hover:text-blue-400 transition-colors duration-300"
+            onClick={toggleMenu}
+          >
+            <FcFaq className="text-base" /> FAQs
+          </Link>
+          <Link
+            href="/community"
+            className="text-white text-lg flex items-center gap-2 hover:text-blue-400 transition-colors duration-300"
+            onClick={toggleMenu}
+          >
+            <FcBusinessman className="text-base" /> Community
           </Link>
         </nav>
       </div>
