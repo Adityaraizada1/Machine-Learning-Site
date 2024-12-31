@@ -102,7 +102,7 @@ const TermsConditions: FC = () => {
             <div>
               <h2 className="text-2xl font-semibold mt-6">10. Contact Us</h2>
               <p>
-                If you have any questions about these Terms and Conditions, feel free to reach out to us at <span className="text-green-500">adityaraizada59@gmail.com</span>.
+                If you have any questions about these Terms and Conditions, feel free to reach out to us at <span className="text-green-500">adityaraizada59@gmail.com</span> or <span className="text-green-500">saketdev12@gmail.com</span> .
               </p>
             </div>
             </div>
