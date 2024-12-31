@@ -138,6 +138,23 @@ const AboutUs = () => {
                                 </h3>
                                 <p className="text-gray-300">Lead Designer</p>
                             </div>
+                            {/* Team Member 5 */}
+                            <div className="w-full sm:w-1/2 lg:w-1/4 text-center">
+                                <div className="relative w-32 h-32 mx-auto mb-4">
+                                    <Image
+                                        src="/team-member-5.jpg"
+                                        alt="Jyotiermaan Rai"
+                                        fill
+                                        style={{ objectFit: "cover" }}
+                                        className="rounded-full"
+                                    />
+                                </div>
+                                <h3 className="text-xl font-semibold flex justify-center items-center gap-2">
+                                    Sheril Dhiman
+                                    <MdVerified className="text-blue-500 text-sm" /> {/* Verification icon */}
+                                </h3>
+                                <p className="text-gray-300">Intern, Dev</p>
+                            </div>
                         </div>
                     </div>
 

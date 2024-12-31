@@ -7,7 +7,6 @@ import Link from "next/link"; // Import Next.js Link for navigation
 import { FlipWords } from "@/components/ui/flip-words";
 import { ShootingStars } from "@/components/ui/shooting-stars"; // Import ShootingStars component
 import { StarsBackground } from "@/components/ui/stars-background";
-import { Button } from "@nextui-org/button";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -43,12 +42,9 @@ const Home = () => {
               {/* Call to Action Button */}
               <Link
                 href="/docs"
-                className=""
               >
-                <span className="flex items-center gap-2 justify-center">
-                  <Button color="primary" variant="shadow">
+                <span className="flex items-center gap-2 justify-center underline">
                     Read More
-                  </Button>
                 </span>
               </Link>
             </div>
