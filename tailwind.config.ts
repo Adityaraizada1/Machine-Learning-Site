@@ -1,3 +1,4 @@
+import {nextui} from '@nextui-org/theme';
 import type { Config } from "tailwindcss";
 const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
 
@@ -14,12 +15,13 @@ function addVariablesForColors({ addBase, theme }: any) {
 
 export default {
 	darkMode: ["class"],
-	content: [
-		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
-		"./components/**/*.{js,ts,jsx,tsx,mdx}",
-		"./app/**/*.{js,ts,jsx,tsx,mdx}",
-		"./src/**/*.{ts,tsx}",
-	],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{ts,tsx}",
+    "./node_modules/@nextui-org/theme/dist/components/(button|navbar|ripple|spinner).js"
+  ],
 	theme: {
 		extend: {
 			colors: {
@@ -95,10 +97,6 @@ export default {
 			},
 		}
 	},
-	plugins: [
-		require("tailwindcss-animate"),
-		require("@tailwindcss/typography"),
-		addVariablesForColors
-	],
+  plugins: [require("tailwindcss-animate"),require("@tailwindcss/typography"),addVariablesForColors,nextui()],
 } satisfies Config;
 

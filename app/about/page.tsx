@@ -6,6 +6,7 @@ import Image from "next/image"
 import React, { useEffect } from "react";
 import { MdVerified } from "react-icons/md";
 import Footer from "@/components/Footer";
+import HyperText from "@/components/ui/hyper-text";
 
 const AboutUs = () => {
 
@@ -40,7 +41,7 @@ const AboutUs = () => {
                     <h2 className="text-3xl font-semibold text-center">Who We Are</h2>
                     <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed text-justify">
                         <span className="relative">
-                            <span className="absolute inset-0 bg-green-400 opacity-50 rounded-md -bottom-1.5"></span>
+                            <span className="absolute inset-0 opacity-50 rounded-md -bottom-1.5"></span>
                             <span className="relative z-10">We are a team of visionaries</span>
                         </span>{' '}
                         and creators who aim to design solutions that address modern
@@ -56,7 +57,7 @@ const AboutUs = () => {
                     <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed text-justify">
                         Our journey is fueled by the belief that{' '}
                         <span className="relative">
-                            <span className="absolute inset-0 bg-green-400 opacity-50 rounded-md -bottom-1.5"></span>
+                            <span className="absolute inset-0 opacity-50 rounded-md -bottom-1.5"></span>
                             <span className="relative z-10">technology can be a catalyst for positive change.</span>
                         </span>{' '}
                         By bridging the gap between innovation and real-world needs, we
@@ -67,7 +68,7 @@ const AboutUs = () => {
 
                 {/* Meet Our Team Section */}
                  <div className="space-y-8">
-                        <h2 className="text-3xl font-semibold text-center">Meet Our Team</h2>
+                        <h2 className="text-3xl font-semibold text-center"><HyperText>Meet Our Team</HyperText></h2>
                         <div className="flex flex-wrap justify-center gap-8">
                             {/* Team Member 1 */}
                             <div className="w-full sm:w-1/2 lg:w-1/4 text-center">

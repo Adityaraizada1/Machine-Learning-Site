@@ -1,163 +1,114 @@
-"use client";
-
-import React, { useState } from "react";
-import { FaBars, FaTimes, FaGithub } from "react-icons/fa";
-import { FcFaq, FcAbout, FcDocument, FcBusinessman } from "react-icons/fc";
+import React from "react";
 import Link from "next/link";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+  Button,
+} from "@nextui-org/react";
 
-const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDocsDropdownOpen, setIsDocsDropdownOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const toggleDocsDropdown = () => {
-    setIsDocsDropdownOpen(!isDocsDropdownOpen);
-  };
-
+export const AcmeLogo = () => {
   return (
-    <div>
-      {/* Header with Starry Background */}
-      <header className="flex items-center justify-between p-4 md:p-6 bg-black fixed top-0 left-0 right-0 z-20 shadow-lg">
-        <div className="text-2xl font-bold text-white">
-          <Link href="/">ML</Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="md:hidden cursor-pointer" onClick={toggleMenu} aria-label="Toggle Menu">
-          {isMenuOpen ? (
-            <FaTimes className="text-2xl text-white scale-90" />
-          ) : (
-            <FaBars className="text-2xl text-white scale-90" />
-          )}
-        </div>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6 items-center">
-          {/* Docs Dropdown */}
-          <div className="relative">
-            <button
-              onClick={toggleDocsDropdown}
-              className="text-white text-sm flex items-center gap-1 hover:text-blue-200 transition-colors duration-300"
-            >
-              <FcDocument className="text-base" /> Docs
-            </button>
-            {isDocsDropdownOpen && (
-              <div className="absolute left-0 mt-2 bg-black text-white shadow-md rounded-md w-48">
-                <Link
-                  href="/docs"
-                  className="block px-4 py-2 text-sm hover:bg-gray-800 transition-colors duration-300"
-                >
-                  Go to Docs
-                </Link>
-                <Link
-                  href="/introduction"
-                  className="block px-4 py-2 text-sm hover:bg-gray-800 transition-colors duration-300"
-                >
-                  Getting Started
-                </Link>
-                <Link
-                  href="/api-references"
-                  className="block px-4 py-2 text-sm hover:bg-gray-800 transition-colors duration-300"
-                >
-                  API References
-                </Link>
-                <Link
-                  href="/soon"
-                  className="block px-4 py-2 text-sm hover:bg-gray-800 transition-colors duration-300"
-                >
-                  Advanced Guides
-                </Link>
-              </div>
-            )}
-          </div>
-
-          <Link
-            href="/source"
-            className="text-white text-sm flex items-center gap-1 hover:text-blue-200 transition-colors duration-300"
-          >
-            <FaGithub className="text-base" /> Source
-          </Link>
-          <Link
-            href="/about"
-            className="text-white text-sm flex items-center gap-1 hover:text-blue-200 transition-colors duration-300"
-          >
-            <FcAbout className="text-base" /> About
-          </Link>
-          <Link
-            href="/faq"
-            className="text-white text-sm flex items-center gap-1 hover:text-blue-200 transition-colors duration-300"
-          >
-            <FcFaq className="text-base" /> FAQs
-          </Link>
-          <Link
-            href="/community"
-            className="text-white text-sm flex items-center gap-1 hover:text-blue-200 transition-colors duration-300"
-          >
-            <FcBusinessman className="text-base" /> Community
-          </Link>
-        </nav>
-      </header>
-
-      {/* Sidebar Menu (Visible only on mobile) */}
-      <div
-        className={`fixed top-0 left-0 h-full w-3/4 bg-black z-30 transition-transform transform md:hidden ${isMenuOpen ? "translate-x-0" : "-translate-x-full"}`}
-        aria-hidden={!isMenuOpen}
-      >
-        <div className="p-4 flex justify-between items-center border-b border-gray-700">
-          <div className="text-2xl font-bold text-white">ML</div>
-          <div className="cursor-pointer" onClick={toggleMenu} aria-label="Close Menu">
-          </div>
-        </div>
-        <nav className="flex flex-col p-6 space-y-4">
-          <Link
-            href="/docs"
-            className="text-white text-lg flex items-center gap-2 hover:text-blue-400 transition-colors duration-300"
-            onClick={toggleMenu}
-          >
-            <FcDocument className="text-base" /> Docs
-          </Link>
-          <Link
-            href="/source"
-            className="text-white text-lg flex items-center gap-2 hover:text-blue-400 transition-colors duration-300"
-            onClick={toggleMenu}
-          >
-            <FaGithub className="text-base" /> Source
-          </Link>
-          <Link
-            href="/about"
-            className="text-white text-lg flex items-center gap-2 hover:text-blue-400 transition-colors duration-300"
-            onClick={toggleMenu}
-          >
-            <FcAbout className="text-base" /> About
-          </Link>
-          <Link
-            href="/faq"
-            className="text-white text-lg flex items-center gap-2 hover:text-blue-400 transition-colors duration-300"
-            onClick={toggleMenu}
-          >
-            <FcFaq className="text-base" /> FAQs
-          </Link>
-          <Link
-            href="/community"
-            className="text-white text-lg flex items-center gap-2 hover:text-blue-400 transition-colors duration-300"
-            onClick={toggleMenu}
-          >
-            <FcBusinessman className="text-base" /> Community
-          </Link>
-        </nav>
-      </div>
-
-      {/* Content Overlay for Mobile Menu (Blur Effect) */}
-      <div
-        className={`fixed inset-0 bg-opacity-50 backdrop-blur-sm z-10 ${isMenuOpen ? "block" : "hidden"}`}
-        onClick={toggleMenu}
-        aria-hidden={!isMenuOpen}
+    <svg fill="none" height="36" viewBox="0 0 32 32" width="36">
+      <path
+        clipRule="evenodd"
+        d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
+        fill="currentColor"
+        fillRule="evenodd"
       />
-    </div>
+    </svg>
   );
 };
 
-export default Header;
+export default function App() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  const menuItems = [
+    { name: "Docs", href: "/docs" },
+    { name: "About", href: "/about" },
+    { name: "Source", href: "/source" },
+    { name: "FAQs", href: "/faq" },
+    { name: "Community", href: "/community" },
+  ];
+
+  return (
+    <Navbar
+      isBordered
+      onMenuOpenChange={setIsMenuOpen}
+      style={{
+        backgroundColor: "black",
+        color: "white",
+        width: "100%",
+        position: "fixed",
+        top: 0,
+        zIndex: 1000,
+      }}
+    >
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden text-white"
+        />
+        <NavbarBrand>
+          <Link href="/">
+            <AcmeLogo />
+          </Link>
+          <p className="font-bold text-inherit" style={{ color: "white" }}>
+            ML
+          </p>
+        </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent
+        className="hidden sm:flex gap-4"
+        justify="center"
+        style={{ textAlign: "center" }}
+      >
+        {menuItems.map((item, index) => (
+          <NavbarItem key={index}>
+            <Link
+              href={item.href}
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              {item.name}
+            </Link>
+          </NavbarItem>
+        ))}
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <NavbarItem>
+          <Button as={Link} href="" color="primary" variant="flat">
+            Hola!
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarMenu
+        style={{
+          backgroundColor: "black",
+          color: "white",
+          height: "100vh",
+          paddingTop: "1rem",
+        }}
+      >
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={index}>
+            <Link
+              href={item.href}
+              style={{
+                color: "white",
+                textDecoration: "none",
+                fontSize: "1.25rem",
+              }}
+            >
+              {item.name}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
+  );
+}

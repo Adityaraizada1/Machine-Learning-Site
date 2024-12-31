@@ -8,6 +8,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { FaArrowRight } from "react-icons/fa"; // Import React Icons
 import { ShootingStars } from "@/components/ui/shooting-stars"; // Import ShootingStars component
 import { StarsBackground } from "@/components/ui/stars-background";
+import InteractiveHoverButton from "@/components/ui/interactive-hover-button";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -43,11 +44,10 @@ const Home = () => {
               {/* Call to Action Button */}
               <Link
                 href="/docs"
-                className="mt-6 inline-block py-3 px-6 bg-blue-500 text-sm sm:text-base font-semibold rounded-full border-2 border-blue-500 hover:bg-blue-700 hover:border-blue-700 transition duration-300 transform hover:scale-105"
+                className=""
               >
                 <span className="flex items-center gap-2 justify-center">
-                  Read More{" "}
-                  <FaArrowRight className="text-sm transition-transform duration-300 transform hover:translate-x-2" />
+                  <InteractiveHoverButton />
                 </span>
               </Link>
             </div>
