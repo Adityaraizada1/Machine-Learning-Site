@@ -5,7 +5,6 @@ import Preloader from "@/components/Preloader";
 import Navbar from "@/components/Navbar";
 import Link from "next/link"; // Import Next.js Link for navigation
 import { FlipWords } from "@/components/ui/flip-words";
-import { FaArrowRight } from "react-icons/fa"; // Import React Icons
 import { ShootingStars } from "@/components/ui/shooting-stars"; // Import ShootingStars component
 import { StarsBackground } from "@/components/ui/stars-background";
 import InteractiveHoverButton from "@/components/ui/interactive-hover-button";
