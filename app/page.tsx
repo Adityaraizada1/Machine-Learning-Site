@@ -7,7 +7,7 @@ import Link from "next/link"; // Import Next.js Link for navigation
 import { FlipWords } from "@/components/ui/flip-words";
 import { ShootingStars } from "@/components/ui/shooting-stars"; // Import ShootingStars component
 import { StarsBackground } from "@/components/ui/stars-background";
-import InteractiveHoverButton from "@/components/ui/interactive-hover-button";
+import { Button } from "@nextui-org/button";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -46,7 +46,9 @@ const Home = () => {
                 className=""
               >
                 <span className="flex items-center gap-2 justify-center">
-                  <InteractiveHoverButton />
+                  <Button color="primary" variant="shadow">
+                    Read More
+                  </Button>
                 </span>
               </Link>
             </div>

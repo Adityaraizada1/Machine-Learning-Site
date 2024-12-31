@@ -100,7 +100,7 @@ const CommunityPage = () => {
             Our mission is to democratize machine learning education and empower individuals worldwide. Together, we can achieve great things.
           </p>
           <Link
-            href="/contribute"
+            href="https://github.com/Adityaraizada1/Machine-Learning-Site"
             className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded transition duration-300"
           >
             Start Contributing

@@ -1,33 +1,45 @@
 "use client";
-
 import React from "react";
 import Link from "next/link";
+import { SparklesCore } from "@/components/ui/sparkles";
 
-const ComingSoon: React.FC = () => {
+export default function SparklesPreview() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black text-white">
-      <div className="text-center space-y-6 px-4">
-        {/* Heading */}
-        <h1 className="text-4xl font-bold">Something Amazing is Coming Soon!</h1>
+    <div className="min-h-screen w-full bg-black flex flex-col items-center justify-center overflow-hidden">
+      {/* Main Heading */}
+      <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
+        Comming Soon!
+      </h1>
 
-        {/* Subheading */}
-        <p className="text-lg text-gray-300">
-          We're working hard to bring you an incredible experience. Stay tuned!
-        </p>
+      {/* Sparkles Effect */}
+      <div className="relative w-full max-w-5xl h-80 my-8">
+        {/* Gradient Lines */}
+        <div className="absolute inset-x-10 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-full blur-sm" />
+        <div className="absolute inset-x-10 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-full" />
+        {/* <div className="absolute inset-x-40 top-4 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-3/4 blur-sm" /> */}
+        {/* <div className="absolute inset-x-40 top-4 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-3/4" /> */}
 
-        {/* Link to Home */}
-        <div className="pt-6">
-          <Link
-            href="/docs"
-            className="text-xs sm:text-sm font-medium text-gray-300 border border-gray-500 rounded-full py-1 px-3 hover:bg-gray-700 hover:border-gray-400 hover:text-white transition duration-300"
-          >
-            Return to Docs
-          </Link>
-        </div>
+        {/* Sparkles Core */}
+        <SparklesCore
+          background="transparent"
+          minSize={0.4}
+          maxSize={1}
+          particleDensity={1200}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        />
+
+        {/* Radial Gradient */}
+        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(450px_300px_at_top,transparent_20%,white)]"></div>
       </div>
+
+      {/* Return to Home Button */}
+      <Link
+        href="/"
+        className="relative z-20 mt-6 px-6 py-2 text-sm md:text-base font-medium text-gray-200 bg-gray-800 rounded-full border border-gray-700 hover:bg-gray-700 hover:border-gray-500 transition duration-300"
+      >
+        Return to Home
+      </Link>
     </div>
   );
-};
-
-export default ComingSoon;
-
+}
