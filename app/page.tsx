@@ -47,6 +47,7 @@ const Home = () => {
                     Read More
                 </span>
               </Link>
+
             </div>
 
             {/* Footer (Terms and Conditions) */}
