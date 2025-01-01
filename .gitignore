@@ -41,6 +41,11 @@ yarn-error.log*
 next-env.d.ts
 
 # unwanted files
-
+api
+login
+protected
+signup
+models 
+mongoose.ts
 
 Chatbot.tsx

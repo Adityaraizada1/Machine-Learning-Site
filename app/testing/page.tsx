@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from 'next/image'; // Import the Next.js Image component
 import Link from 'next/link'; // Import Next.js Link for navigation
+import UpdateAlert from '@/components/UpdateAlert';
 
 const UnderConstruction: React.FC = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black text-white">
+    <><UpdateAlert /><div className="flex items-center justify-center min-h-screen bg-black text-white">
       <div className="text-center space-y-6 px-4">
         {/* Illustration */}
         <div className="max-w-md mx-auto">
@@ -13,8 +14,7 @@ const UnderConstruction: React.FC = () => {
             alt="Under Construction Illustration"
             width={500}
             height={300}
-            className="w-full rounded-lg shadow-lg"
-          />
+            className="w-full rounded-lg shadow-lg" />
         </div>
 
         {/* Heading */}
@@ -36,7 +36,7 @@ const UnderConstruction: React.FC = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 

@@ -23,6 +23,7 @@ const Home = () => {
         <Preloader />
       ) : (
         <>
+          
           <Navbar />
           <div className="relative bg-black text-white min-h-screen flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16">
             {/* Background Shooting Stars */}

@@ -37,7 +37,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${manrope.variable} antialiased`} // Apply the Manrope font
       >
 
-          {children}
+        {children}
 
         <Analytics />
         <SpeedInsights />
