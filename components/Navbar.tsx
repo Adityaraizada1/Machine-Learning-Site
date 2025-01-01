@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import {
@@ -12,7 +10,6 @@ import {
   NavbarMenuItem,
   Button,
 } from "@nextui-org/react";
-import { useAuth, UserButton, SignUpButton } from "@clerk/nextjs";
 
 export const AcmeLogo = () => {
   return (
@@ -29,7 +26,6 @@ export const AcmeLogo = () => {
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const { isSignedIn } = useAuth();
 
   const menuItems = [
     { name: "Docs", href: "/docs" },
@@ -85,15 +81,9 @@ export default function App() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
-          {isSignedIn ? (
-            <UserButton />
-          ) : (
-            <SignUpButton>
-              <Button className="text-white" variant="flat">
-                Sign Up/In
-              </Button>
-            </SignUpButton>
-          )}
+          <Button as={Link} href="/soon" className="text-white" variant="flat">
+            Sign Up
+          </Button>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu
