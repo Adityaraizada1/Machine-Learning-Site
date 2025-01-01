@@ -81,8 +81,8 @@ export default function App() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button as={Link} href="/soon" className="text-white" variant="flat">
-            Sign Up
+          <Button as={Link} href="/testing" className="text-white" variant="flat">
+            Sign Up/In
           </Button>
         </NavbarItem>
       </NavbarContent>
