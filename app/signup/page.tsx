@@ -74,8 +74,13 @@ const SignUp = () => {
       } else {
         setError(response.data.error || "Error signing up");
       }
-    } catch (err: any) {
-      setError(err.response?.data?.error || "Error signing up");
+    } catch (err: unknown) {
+      // TypeScript error handling using 'unknown' and type assertion
+      if (axios.isAxiosError(err)) {
+        setError(err.response?.data?.error || "Error signing up");
+      } else {
+        setError("Error signing up");
+      }
     } finally {
       setLoading(false);
     }
@@ -124,6 +129,7 @@ const SignUp = () => {
               <p className="text-red-500 text-xs mt-1">{fieldErrors.username}</p>
             )}
           </div>
+
           <div>
             <input
               type="email"
@@ -136,6 +142,7 @@ const SignUp = () => {
               <p className="text-red-500 text-xs mt-1">{fieldErrors.email}</p>
             )}
           </div>
+
           <div>
             <input
               type="password"
@@ -146,8 +153,6 @@ const SignUp = () => {
             />
           </div>
 
-          {error && <p className="text-red-500 text-sm mt-2 text-center">{error}</p>}
-
           <button
             onClick={handleSignUp}
             disabled={loading}
@@ -157,6 +162,9 @@ const SignUp = () => {
           >
             {loading ? "Signing Up..." : "Sign Up"}
           </button>
+
+          {/* Error message */}
+          {error && <div className="mt-4 text-sm text-red-500 text-center">{error}</div>}
         </div>
 
         <div className="text-center mt-4 text-sm text-neutral-400">

@@ -34,8 +34,13 @@ const Login = () => {
       } else {
         setErrorMessage(response.data.error || "Error logging in");
       }
-    } catch (err: any) {
-      setErrorMessage(err.response?.data?.error || "Something went wrong");
+    } catch (err: unknown) {
+      // TypeScript error handling using 'unknown' and type assertion
+      if (axios.isAxiosError(err)) {
+        setErrorMessage(err.response?.data?.error || "Something went wrong");
+      } else {
+        setErrorMessage("Something went wrong");
+      }
     } finally {
       setLoading(false);
     }

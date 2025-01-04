@@ -43,7 +43,7 @@ export default function App() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // Toggle dropdown visibility
-  function toggleDropdown(_event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+  function toggleDropdown(_e: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
     setDropdownOpen(!dropdownOpen);
   }
 
