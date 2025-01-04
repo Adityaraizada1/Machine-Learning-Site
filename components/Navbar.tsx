@@ -1,5 +1,8 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
+import { FiLogOut, FiChevronDown } from "react-icons/fi"; // Use FiChevronDown for dropdown arrow
 import {
   Navbar,
   NavbarBrand,
@@ -10,6 +13,7 @@ import {
   NavbarMenuItem,
   Button,
 } from "@nextui-org/react";
+import { useUser } from "@/app/context/UserContext"; // Ensure the UserContext is properly set up
 
 export const AcmeLogo = () => {
   return (
@@ -25,7 +29,8 @@ export const AcmeLogo = () => {
 };
 
 export default function App() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, logout } = useUser(); // Access user context
 
   const menuItems = [
     { name: "Docs", href: "/docs" },
@@ -34,6 +39,13 @@ export default function App() {
     { name: "FAQs", href: "/faq" },
     { name: "Community", href: "/community" },
   ];
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  // Toggle dropdown visibility
+  function toggleDropdown(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    setDropdownOpen(!dropdownOpen);
+  }
 
   return (
     <Navbar
@@ -48,6 +60,7 @@ export default function App() {
         zIndex: 1000,
       }}
     >
+      {/* Navbar Content */}
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -63,6 +76,7 @@ export default function App() {
         </NavbarBrand>
       </NavbarContent>
 
+      {/* Center Menu Items */}
       <NavbarContent
         className="hidden sm:flex gap-4"
         justify="center"
@@ -79,13 +93,46 @@ export default function App() {
           </NavbarItem>
         ))}
       </NavbarContent>
+
+      {/* User Auth Section */}
       <NavbarContent justify="end">
         <NavbarItem>
-          <Button as={Link} href="/testing" className="text-white" variant="flat">
-            Sign Up/In
-          </Button>
+          {user ? (
+            <div className="relative">
+              <button
+                onClick={toggleDropdown}
+                className="flex items-center gap-2 text-white"
+              >
+                Welcome !{/* Welcome, {user?.name || "User"}!  fix this*/}
+                <FiChevronDown className="text-white" />
+              </button>
+
+              {dropdownOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-black text-white rounded-md shadow-lg">
+                  <button
+                    onClick={logout}
+                    className="w-full flex items-center p-2 gap-2 hover:bg-gray-700 rounded-md"
+                  >
+                    <FiLogOut className="text-xl" />
+                    Logout
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <Button
+              as={Link}
+              href="/signup"
+              className="text-white"
+              variant="flat"
+            >
+              Sign In/Up
+            </Button>
+          )}
         </NavbarItem>
       </NavbarContent>
+
+      {/* Mobile Menu */}
       <NavbarMenu
         style={{
           backgroundColor: "black",
