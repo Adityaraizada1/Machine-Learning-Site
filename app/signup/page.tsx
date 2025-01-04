@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useUser } from "@/app/context/UserContext"; // Import the UserContext
 import { FaCheckCircle } from "react-icons/fa"; // Import the icon for success message
+import UpdateAlert from "@/components/UpdateAlert";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -87,7 +88,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black flex justify-center items-center px-4">
+    <><UpdateAlert /><div className="min-h-screen bg-black flex justify-center items-center px-4">
       <div className="w-full max-w-lg bg-neutral-900 p-8 rounded-xl shadow-lg">
         {/* Success Message */}
         {successMessage && (
@@ -109,8 +110,7 @@ const SignUp = () => {
               clipRule="evenodd"
               d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
               fill="currentColor"
-              fillRule="evenodd"
-            />
+              fillRule="evenodd" />
           </svg>
         </div>
 
@@ -123,8 +123,7 @@ const SignUp = () => {
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full p-3 bg-neutral-800 text-white border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+              className="w-full p-3 bg-neutral-800 text-white border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
             {fieldErrors.username && (
               <p className="text-red-500 text-xs mt-1">{fieldErrors.username}</p>
             )}
@@ -136,8 +135,7 @@ const SignUp = () => {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-3 bg-neutral-800 text-white border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+              className="w-full p-3 bg-neutral-800 text-white border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
             {fieldErrors.email && (
               <p className="text-red-500 text-xs mt-1">{fieldErrors.email}</p>
             )}
@@ -149,16 +147,13 @@ const SignUp = () => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-3 bg-neutral-800 text-white border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+              className="w-full p-3 bg-neutral-800 text-white border border-neutral-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
           </div>
 
           <button
             onClick={handleSignUp}
             disabled={loading}
-            className={`w-full py-3 text-white font-semibold rounded-md transition-all ${
-              loading ? "bg-neutral-700 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
-            }`}
+            className={`w-full py-3 text-white font-semibold rounded-md transition-all ${loading ? "bg-neutral-700 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"}`}
           >
             {loading ? "Signing Up..." : "Sign Up"}
           </button>
@@ -174,7 +169,7 @@ const SignUp = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 
