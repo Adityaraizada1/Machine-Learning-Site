@@ -61,7 +61,7 @@ const Home = () => {
               </Link>
 
               {/* Trusted By Section */}
-              <div className="mt-10 px-6 py-4 backdrop-blur-md rounded-lg flex flex-col items-center">
+              <div className="mt-10 px-6 py-4 backdrop-blur-sm rounded-lg flex flex-col items-center">
                 <p className="text-sm text-gray-400 mb-4">Trusted by industry leaders</p>
                 <div className="flex gap-6 justify-center">
                   {logos.map((logo, index) => (
