@@ -61,18 +61,22 @@ const Home = () => {
               </Link>
 
               {/* Trusted By Section */}
-              <div className="mt-10 px-6 py-4 backdrop-blur-sm rounded-lg flex flex-col items-center">
+              <div className="mt-10 px-6 py-4 bg-white/10 backdrop-blur-md rounded-lg flex flex-col items-center">
                 <p className="text-sm text-gray-400 mb-4">Trusted by industry leaders</p>
-                <div className="flex gap-6 justify-center">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full max-w-xs sm:max-w-md">
                   {logos.map((logo, index) => (
-                    <Image
+                    <div
                       key={index}
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={120} // Adjust logo size
-                      height={60}
-                      className="object-contain"
-                    />
+                      className="flex items-center justify-center bg-white/20 rounded-md p-2"
+                    >
+                      <Image
+                        src={logo.src}
+                        alt={logo.alt}
+                        width={80} // Adjust size for mobile
+                        height={40}
+                        className="object-contain"
+                      />
+                    </div>
                   ))}
                 </div>
               </div>
