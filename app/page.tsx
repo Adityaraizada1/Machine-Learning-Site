@@ -4,15 +4,29 @@ import { useState, useEffect } from "react";
 import Preloader from "@/components/Preloader";
 import Navbar from "@/components/Navbar";
 import Link from "next/link"; // Import Next.js Link for navigation
+import Image from "next/image"; // Import Next.js Image component
 import { FlipWords } from "@/components/ui/flip-words";
 import { ShootingStars } from "@/components/ui/shooting-stars"; // Import ShootingStars component
 import { StarsBackground } from "@/components/ui/stars-background";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
+  const [logos, setLogos] = useState<{ src: string; alt: string }[]>([]);
+
+  // List of logos
+  const logoList = [
+    { src: "/google-logo.png", alt: "Google Logo" },
+    { src: "/amazon-logo.png", alt: "Amazon Logo" },
+    { src: "/microsoft-logo.png", alt: "Microsoft Logo" },
+    { src: "/facebook-logo.png", alt: "Facebook Logo" },
+  ];
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 2000); // Simulate loading
+
+    // Randomly select logos
+    const shuffledLogos = logoList.sort(() => 0.5 - Math.random()).slice(0, 3);
+    setLogos(shuffledLogos);
   }, []);
 
   const words = ["and Master.", "your AI.", "and Learn.", "the bot.", "cuz it's future."];
@@ -23,7 +37,6 @@ const Home = () => {
         <Preloader />
       ) : (
         <>
-          
           <Navbar />
           <div className="relative bg-black text-white min-h-screen flex flex-col justify-center items-center px-4 sm:px-8 lg:px-16">
             {/* Background Shooting Stars */}
@@ -41,14 +54,28 @@ const Home = () => {
               </h1>
 
               {/* Call to Action Button */}
-              <Link
-                href="/docs"
-              >
+              <Link href="/docs">
                 <span className="flex items-center gap-2 justify-center underline">
-                    Read More
+                  Read More
                 </span>
               </Link>
 
+              {/* Trusted By Section */}
+              <div className="mt-10 px-6 py-4 backdrop-blur-md rounded-lg flex flex-col items-center">
+                <p className="text-sm text-gray-400 mb-4">Trusted by industry leaders</p>
+                <div className="flex gap-6 justify-center">
+                  {logos.map((logo, index) => (
+                    <Image
+                      key={index}
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={120} // Adjust logo size
+                      height={60}
+                      className="object-contain"
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Footer (Terms and Conditions) */}

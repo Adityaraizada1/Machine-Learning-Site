@@ -122,11 +122,11 @@ export default function App() {
           ) : (
             <Button
               as={Link}
-              href="/signup"
+              href="/"
               className="text-white"
               variant="flat"
             >
-              Sign In/Up
+              Hola Amigos!
             </Button>
           )}
         </NavbarItem>
