@@ -45,13 +45,13 @@ const Docs = () => {
           {/* Card 2 - Advanced Guides */}
           <div className="bg-gray-800 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300 group">
             <h2 className="text-xl sm:text-2xl font-semibold mb-4 group-hover:text-blue-400 transition duration-300">
-              Advanced Guides
+              Video Guides
             </h2>
             <p className="text-sm sm:text-md text-gray-400 mb-4">
-              Dive into advanced topics like neural networks, NLP, and AI ethics.
+              Explore Videos to learn more about machine learning and AI.
             </p>
             <Link
-              href="/soon"
+              href="/video"
               className="flex items-center justify-center text-blue-400 font-semibold hover:text-blue-500 transition duration-300"
             >
               Read More <FaArrowRight className="ml-2 transition-transform transform group-hover:translate-x-1" />

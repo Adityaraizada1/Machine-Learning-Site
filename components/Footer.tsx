@@ -10,7 +10,6 @@ const Footer: React.FC = () => {
           {/* Funny line about Machine Learning */}
           <div className="text-center text-gray-400 mb-4">
             <p className="text-sm">
-              Machine learning: because sometimes humans need help to be "smarter" 😜
             </p>
           </div>
 

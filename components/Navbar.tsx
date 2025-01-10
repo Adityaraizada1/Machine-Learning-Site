@@ -36,6 +36,7 @@ export default function App() {
     { name: "Docs", href: "/docs" },
     { name: "About", href: "/about" },
     { name: "Source", href: "/source" },
+    { name: "Videos", href: "/video" },
     { name: "FAQs", href: "/faq" },
     { name: "Community", href: "/community" },
   ];
