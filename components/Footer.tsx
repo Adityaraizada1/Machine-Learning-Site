@@ -8,8 +8,8 @@ const Footer: React.FC = () => {
 
   const socialLinks = [
     { icon: FaGithub, href: "https://github.com/Adityaraizada1/Machine-Learning-Site", label: "GitHub" },
-    { icon: FaTwitter, href: "https://twitter.com/your-handle", label: "Twitter" },
-    { icon: FaLinkedin, href: "https://linkedin.com/in/your-profile", label: "LinkedIn" },
+    { icon: FaTwitter, href: "https://twitter.com/adityaraizada_", label: "Twitter" },
+    { icon: FaLinkedin, href: "https://linkedin.com/in/raizadaaditya", label: "LinkedIn" },
   ];
 
   const footerLinks = [
@@ -121,7 +121,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-2 text-gray-400 text-sm">
               <span>&copy; {currentYear} ML.</span>
               <span className="flex items-center gap-1">
-                Made with <FaHeart className="text-red-500 animate-pulse w-4 h-4" /> by Team
+                Made with <FaHeart className="text-red-500 animate-pulse w-4 h-4" /> by Team Quintet
               </span>
             </div>
             
