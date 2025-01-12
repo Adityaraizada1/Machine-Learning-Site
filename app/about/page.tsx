@@ -9,171 +9,128 @@ import Footer from "@/components/Footer";
 import HyperText from "@/components/ui/hyper-text";
 
 const AboutUs = () => {
-
-    // Change document title when About Us page is loaded
     useEffect(() => {
-        // Set custom title for About Us page
         document.title = "ML | About Us";
-
-        // Optional: Clean up by resetting the title when the component is unmounted
         return () => {
-            document.title = "ML | One on One"; // Reset to default title or any other title
+            document.title = "ML | One on One";
         };
     }, []);
 
     return (
-        <><Navbar /><section className="bg-black text-white min-h-screen flex flex-col items-center px-6 sm:px-12 lg:px-24 py-16 pt-24">
-            <div className="w-full max-w-6xl space-y-16">
-                {/* Header Section */}
-                <div className="text-center">
-                    <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-                        About <span className="text-blue-500">Us</span>
-                    </h1>
-                    <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
-                        We are passionate innovators, driven to make technology accessible
-                        and impactful for everyone. With a strong belief in the power of
-                        collaboration, we strive to bring meaningful solutions to life.
-                    </p>
-                </div>
+        <>
+            <Navbar />
+            <section className="relative bg-black text-white min-h-screen">
+                {/* Background Gradient */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.03)_0%,_transparent_70%)]" />
 
-                {/* Who We Are Section */}
-                <div className="space-y-8">
-                    <h2 className="text-3xl font-semibold text-center">Who We Are</h2>
-                    <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed text-justify">
-                        <span className="relative">
-                            <span className="absolute inset-0 opacity-50 rounded-md -bottom-1.5"></span>
-                            <span className="relative z-10">We are a team of visionaries</span>
-                        </span>{' '}
-                        and creators who aim to design solutions that address modern
-                        challenges. Our mission revolves around harnessing technology to
-                        transform ideas into reality, helping businesses and individuals
-                        achieve their goals effectively.
-                    </p>
-                </div>
+                <div className="relative z-10 flex flex-col items-center px-4 sm:px-6 lg:px-8 py-16 pt-24">
+                    <div className="w-full max-w-6xl space-y-20">
+                        {/* Header Section */}
+                        <div className="text-center space-y-4">
+                            <h1 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
+                                About <span className="text-blue-500">Us</span>
+                            </h1>
+                            <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                                We are passionate innovators, driven to make technology accessible
+                                and impactful for everyone. With a strong belief in the power of
+                                collaboration, we strive to bring meaningful solutions to life.
+                            </p>
+                        </div>
 
-                {/* Why We Do It Section */}
-                <div className="space-y-8">
-                    <h2 className="text-3xl font-semibold text-center">Why We Do It</h2>
-                    <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed text-justify">
-                        Our journey is fueled by the belief that{' '}
-                        <span className="relative">
-                            <span className="absolute inset-0 opacity-50 rounded-md -bottom-1.5"></span>
-                            <span className="relative z-10">technology can be a catalyst for positive change.</span>
-                        </span>{' '}
-                        By bridging the gap between innovation and real-world needs, we
-                        empower people to make smarter, faster decisions and enhance their
-                        lives.
-                    </p>
-                </div>
+                        {/* Who We Are Section */}
+                        <div className="space-y-4 max-w-4xl mx-auto">
+                            <h2 className="text-3xl font-semibold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-white/90">
+                                Who We Are
+                            </h2>
+                            <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
+                                <span className="text-blue-400 border-b border-blue-500/20">
+                                    We are a team of visionaries
+                                </span>{' '}
+                                and creators who aim to design solutions that address modern
+                                challenges. Our mission revolves around harnessing technology to
+                                transform ideas into reality, helping businesses and individuals
+                                achieve their goals effectively.
+                            </p>
+                        </div>
 
-                {/* Meet Our Team Section */}
-                 <div className="space-y-8">
-                        <h2 className="text-3xl font-semibold text-center"><HyperText>Meet Our Team</HyperText></h2>
-                        <div className="flex flex-wrap justify-center gap-8">
-                            {/* Team Member 1 */}
-                            <div className="w-full sm:w-1/2 lg:w-1/4 text-center">
-                                <div className="relative w-32 h-32 mx-auto mb-4">
-                                    <Image
-                                        src="/team-member-1.jpg"
-                                        alt="Aditya Raizada"
-                                        fill // This replaces the "layout" prop
-                                        style={{ objectFit: "cover" }} // This replaces the "objectFit" prop
-                                        className="rounded-full"
-                                    />
-                                </div>
-                                <h3 className="text-xl font-semibold flex justify-center items-center gap-2">
-                                    Aditya Raizada
-                                    <MdVerified className="text-blue-500 text-sm" /> {/* Verification icon */}
-                                </h3>
-                                <p className="text-gray-300">Co-founder & CEO</p>
-                            </div>
-                            {/* Team Member 2 */}
-                            <div className="w-full sm:w-1/2 lg:w-1/4 text-center">
-                                <div className="relative w-32 h-32 mx-auto mb-4">
-                                    <Image
-                                        src="/team-member-2.jpeg"
-                                        alt="Saket Gupta"
-                                        fill
-                                        style={{ objectFit: "cover" }}
-                                        className="rounded-full"
-                                    />
-                                </div>
-                                <h3 className="text-xl font-semibold flex justify-center items-center gap-2">
-                                    Saket Gupta
-                                    <MdVerified className="text-blue-500 text-sm" /> {/* Verification icon */}
-                                </h3>
-                                <p className="text-gray-300">Co-founder & CTO</p>
-                            </div>
-                            {/* Team Member 3 */}
-                            <div className="w-full sm:w-1/2 lg:w-1/4 text-center">
-                                <div className="relative w-32 h-32 mx-auto mb-4">
-                                    <Image
-                                        src="/team-member-3.jpg"
-                                        alt="Vibhav Sharma"
-                                        fill
-                                        style={{ objectFit: "cover" }}
-                                        className="rounded-full"
-                                    />
-                                </div>
-                                <h3 className="text-xl font-semibold flex justify-center items-center gap-2">
-                                    Vibhav Sharma
-                                    <MdVerified className="text-blue-500 text-sm" /> {/* Verification icon */}
-                                </h3>
-                                <p className="text-gray-300">Lead Designer</p>
-                            </div>
-                            {/* Team Member 4 */}
-                            <div className="w-full sm:w-1/2 lg:w-1/4 text-center">
-                                <div className="relative w-32 h-32 mx-auto mb-4">
-                                    <Image
-                                        src="/team-member-4.jpg"
-                                        alt="Jyotiermaan Rai"
-                                        fill
-                                        style={{ objectFit: "cover" }}
-                                        className="rounded-full"
-                                    />
-                                </div>
-                                <h3 className="text-xl font-semibold flex justify-center items-center gap-2">
-                                    Jyotiermaan Rai
-                                    <MdVerified className="text-blue-500 text-sm" /> {/* Verification icon */}
-                                </h3>
-                                <p className="text-gray-300">Lead Designer</p>
-                            </div>
-                            {/* Team Member 5 */}
-                            <div className="w-full sm:w-1/2 lg:w-1/4 text-center">
-                                <div className="relative w-32 h-32 mx-auto mb-4">
-                                    <Image
-                                        src="/team-member-5.jpg"
-                                        alt="Jyotiermaan Rai"
-                                        fill
-                                        style={{ objectFit: "cover" }}
-                                        className="rounded-full"
-                                    />
-                                </div>
-                                <h3 className="text-xl font-semibold flex justify-center items-center gap-2">
-                                    Sheril Dhiman
-                                    <MdVerified className="text-blue-500 text-sm" /> {/* Verification icon */}
-                                </h3>
-                                <p className="text-gray-300">Intern, Dev</p>
+                        {/* Why We Do It Section */}
+                        <div className="space-y-4 max-w-4xl mx-auto">
+                            <h2 className="text-3xl font-semibold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-white/90">
+                                Why We Do It
+                            </h2>
+                            <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
+                                Our journey is fueled by the belief that{' '}
+                                <span className="text-blue-400 border-b border-blue-500/20">
+                                    technology can be a catalyst for positive change.
+                                </span>{' '}
+                                By bridging the gap between innovation and real-world needs, we
+                                empower people to make smarter, faster decisions and enhance their
+                                lives.
+                            </p>
+                        </div>
+
+                        {/* Meet Our Team Section */}
+                        <div className="space-y-12">
+                            <h2 className="text-3xl font-semibold text-center">
+                                <HyperText>Meet Our Team</HyperText>
+                            </h2>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
+                                {[
+                                    { name: "Aditya Raizada", role: "Co-founder & CEO", image: "/team-member-1.jpg" },
+                                    { name: "Saket Gupta", role: "Co-founder & CTO", image: "/team-member-2.jpeg" },
+                                    { name: "Vibhav Sharma", role: "Lead Designer", image: "/team-member-3.jpg" },
+                                    { name: "Jyotiermaan Rai", role: "Lead Designer", image: "/team-member-4.jpg" },
+                                    { name: "Sheril Dhiman", role: "Intern, Dev", image: "/team-member-5.jpg" },
+                                ].map((member, index) => (
+                                    <div key={index} className="group text-center">
+                                        <div className="relative w-32 h-32 mx-auto mb-4 group-hover:scale-105 transition-transform duration-300">
+                                            <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-xl group-hover:blur-2xl transition-all opacity-0 group-hover:opacity-70" />
+                                            <Image
+                                                src={member.image}
+                                                alt={member.name}
+                                                fill
+                                                style={{ objectFit: "cover" }}
+                                                className="rounded-full relative z-10"
+                                            />
+                                        </div>
+                                        <h3 className="text-lg font-semibold flex justify-center items-center gap-2">
+                                            {member.name}
+                                            <MdVerified className="text-blue-500 text-sm" />
+                                        </h3>
+                                        <p className="text-gray-400 text-sm">{member.role}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
-                    </div>
 
-                {/* Contact Us Section */}
-                <div className="text-center mt-12">
-                    <h2 className="text-3xl font-semibold mb-6">Get in Touch</h2>
-                    <p className="text-lg sm:text-xl text-gray-300 mb-4">
-                        Have any questions or want to collaborate with us?{" "}
-                        <Link
-                            href="mailto:adityaraizada59@gmail.com Inquiry&body=Hello, I would like to discuss a potential collaboration." // Replace with your email address
-                            className="text-blue-500 hover:text-blue-700 transition-colors duration-300"
-                        >
-                            Contact Us
-                        </Link>
-                    </p>
+                        {/* Contact Us Section */}
+                        <div className="text-center space-y-4 max-w-3xl mx-auto">
+                            <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/90">
+                                Get in Touch
+                            </h2>
+                            <p className="text-base sm:text-lg text-gray-300">
+                                Have any questions or want to collaborate with us?{" "}
+                                <Link
+                                    href="mailto:adityaraizada59@gmail.com"
+                                    className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-300 group"
+                                >
+                                    Contact Us
+                                    <svg 
+                                        className="w-4 h-4 group-hover:translate-x-1 transition-transform" 
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </Link>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <Footer />
-        </section></>
+                <Footer />
+            </section>
+        </>
     );
 };
 

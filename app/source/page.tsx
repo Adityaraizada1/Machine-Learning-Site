@@ -2,147 +2,161 @@
 
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
-import { FaGithub, FaReact, FaCss3, FaNodeJs, FaSlack } from "react-icons/fa"; // Added Next.js icon
+import { FaGithub, FaReact, FaCss3, FaNodeJs, FaSlack } from "react-icons/fa";
 import { RiNextjsLine } from "react-icons/ri";
 import { TbBrandVscode } from "react-icons/tb";
 import { MdFilter9Plus } from "react-icons/md";
 import React, { useEffect } from "react";
 import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
 
 const SourcePage = () => {
-    // Change document title when Source page is loaded
     useEffect(() => {
-        document.title = "ML | Sources"; // Set the title
+        document.title = "ML | Sources";
         return () => {
-            document.title = "ML | One on One"; // Reset on unmount
+            document.title = "ML | One on One";
         };
     }, []);
+
+    const fadeInUp = {
+        initial: { opacity: 0, y: 20 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.5 }
+    };
+
+    const tools = [
+        { icon: FaReact, name: "React", color: "text-blue-500", description: "A JavaScript library for building user interfaces, ensuring a smooth and fast user experience." },
+        { icon: FaCss3, name: "Tailwind CSS", color: "text-blue-500", description: "A utility-first CSS framework for styling, making UI development faster and more efficient." },
+        { icon: FaNodeJs, name: "Node.js", color: "text-green-500", description: "A JavaScript runtime for backend development, allowing for non-blocking, event-driven server-side applications." },
+        { icon: FaSlack, name: "Slack", color: "text-purple-500", description: "A team communication and collaboration platform, enabling efficient communication and workflow." },
+        { icon: RiNextjsLine, name: "Next.js", color: "text-white", description: "A powerful React framework for building fast, scalable, and optimized web applications." },
+        { icon: FaGithub, name: "GitHub", color: "text-gray-300", description: "A platform for version control and collaboration, hosting our project's codebase securely." },
+        { icon: TbBrandVscode, name: "VS Code", color: "text-blue-500", description: "A powerful code editor with extensive support for debugging, plugins, and development environments." },
+        { icon: MdFilter9Plus, name: "Many more", color: "text-white", description: "" },
+    ];
 
     return (
         <>
             <Navbar />
-            <section className="bg-black text-white min-h-screen flex flex-col items-center px-6 sm:px-12 lg:px-24 py-16 pt-24">
-                <div className="w-full max-w-6xl space-y-16">
-                    {/* Header Section */}
-                    <div className="text-center">
-                        <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-                            Project <span className="text-blue-500">Sources</span>
-                        </h1>
-                        <p className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-12">
-                            Learn about the sources and technologies that made this project possible. We are
-                            committed to transparency and giving credit where it's due.
-                        </p>
-                    </div>
+            <section className="relative bg-black text-white min-h-screen">
+                {/* Background Gradient */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.03)_0%,_transparent_70%)]" />
 
-                    {/* How We Use the Sources Section */}
-                    <div className="space-y-8">
-                        <h2 className="text-3xl font-semibold text-center mb-6">How We Use the Sources</h2>
-                        <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed text-justify">
-                            Our project leverages multiple open-source tools, libraries, and frameworks to
-                            provide the best user experience and functionality. We use a combination of frontend
-                            and backend technologies to ensure a seamless integration and rapid development.
-                        </p>
-                    </div>
-
-                    {/* Contributors or Tools Section */}
-                    <div className="space-y-8">
-                        <h2 className="text-3xl font-semibold text-center mb-6">Contributors & Tools</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                            {/* Tool 1 - React */}
-                            <div className="flex flex-col items-center text-center space-y-3">
-                                <FaReact className="text-4xl text-blue-500" />
-                                <div>
-                                    <h3 className="text-lg font-semibold">React</h3>
-                                    <p className="text-sm text-gray-300">A JavaScript library for building user interfaces, ensuring a smooth and fast user experience.</p>
-                                </div>
-                            </div>
-                            {/* Tool 2 - Tailwind CSS */}
-                            <div className="flex flex-col items-center text-center space-y-3">
-                                <FaCss3 className="text-4xl text-blue-500" />
-                                <div>
-                                    <h3 className="text-lg font-semibold">Tailwind CSS</h3>
-                                    <p className="text-sm text-gray-300">A utility-first CSS framework for styling, making UI development faster and more efficient.</p>
-                                </div>
-                            </div>
-                            {/* Tool 3 - Node.js */}
-                            <div className="flex flex-col items-center text-center space-y-3">
-                                <FaNodeJs className="text-4xl text-green-500" />
-                                <div>
-                                    <h3 className="text-lg font-semibold">Node.js</h3>
-                                    <p className="text-sm text-gray-300">A JavaScript runtime for backend development, allowing for non-blocking, event-driven server-side applications.</p>
-                                </div>
-                            </div>
-                            {/* Tool 4 - Slack */}
-                            <div className="flex flex-col items-center text-center space-y-3">
-                                <FaSlack className="text-4xl text-purple-500" />
-                                <div>
-                                    <h3 className="text-lg font-semibold">Slack</h3>
-                                    <p className="text-sm text-gray-300">A team communication and collaboration platform, enabling efficient communication and workflow.</p>
-                                </div>
-                            </div>
-                            {/* Tool 5 - Next.js */}
-                            <div className="flex flex-col items-center text-center space-y-3">
-                                <RiNextjsLine className="text-4xl text-white" />
-                                <div>
-                                    <h3 className="text-lg font-semibold">Next.js</h3>
-                                    <p className="text-sm text-gray-300">A powerful React framework for building fast, scalable, and optimized web applications.</p>
-                                </div>
-                            </div>
-                            {/* Tool 6 - GitHub */}
-                            <div className="flex flex-col items-center text-center space-y-3">
-                                <FaGithub className="text-4xl text-gray-300" />
-                                <div>
-                                    <h3 className="text-lg font-semibold">GitHub</h3>
-                                    <p className="text-sm text-gray-300">A platform for version control and collaboration, hosting our project's codebase securely.</p>
-                                </div>
-                            </div>
-                            {/* Tool 8 - VS Code */}
-                            <div className="flex flex-col items-center text-center space-y-3">
-                                <TbBrandVscode className="text-4xl text-blue-500" />
-                                <div>
-                                    <h3 className="text-lg font-semibold">VS Code</h3>
-                                    <p className="text-sm text-gray-300">A powerful code editor with extensive support for debugging, plugins, and development environments.</p>
-                                </div>
-                            </div>
-                            {/* Tool 8 - VS Code */}
-                            <div className="flex flex-col items-center text-center space-y-3">
-                                <MdFilter9Plus className="text-4xl text-white" />
-                                <div>
-                                    <h3 className="text-lg font-semibold">Many more</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    {/* GitHub Repo Section */}
-                    <div className="text-center mt-12">
-                        <h2 className="text-3xl font-semibold mb-6">Contribute on GitHub</h2>
-                        <p className="text-lg sm:text-xl text-gray-300 mb-4">
-                            This project is open-source! Check out the repository on GitHub and contribute to make it even better.
-                        </p>
-                        <Link
-                            href="https://github.com/Adityaraizada1/Machine-Learning-Site" // Replace with your actual repo URL
-                            target="_blank"
-                            className="inline-flex items-center text-blue-500 hover:text-blue-700 transition-colors duration-300"
+                <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-16 pt-24">
+                    <div className="max-w-6xl mx-auto space-y-24">
+                        {/* Header Section */}
+                        <motion.div 
+                            className="text-center space-y-4"
+                            {...fadeInUp}
                         >
-                            <FaGithub className="mr-2 text-2xl" /> View on GitHub
-                        </Link>
-                    </div>
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/70">
+                                Project <span className="text-blue-500">Sources</span>
+                            </h1>
+                            <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
+                                Learn about the sources and technologies that made this project possible. We are
+                                committed to transparency and giving credit where it's due.
+                            </p>
+                        </motion.div>
 
-                    {/* Get in Touch Section */}
-                    <div className="text-center mt-12">
-                        <h2 className="text-3xl font-semibold mb-6">Have Questions?</h2>
-                        <p className="text-lg sm:text-xl text-gray-300 mb-4">
-                            If you have any questions or would like to contribute to the project, feel free to{" "}
-                            <Link
-                                href="mailto:adityaraizada59@gmail.com Inquiry&body=Hello, I would like to discuss a potential collaboration." // Replace with your email address
-                                className="text-blue-500 hover:text-blue-700 transition-colors duration-300"
+                        {/* How We Use the Sources Section */}
+                        <motion.div 
+                            className="space-y-6 max-w-4xl mx-auto"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            <h2 className="text-3xl font-semibold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-white/90">
+                                How We Use the Sources
+                            </h2>
+                            <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
+                                Our project leverages multiple open-source tools, libraries, and frameworks to
+                                provide the best user experience and functionality. We use a combination of frontend
+                                and backend technologies to ensure a seamless integration and rapid development.
+                            </p>
+                        </motion.div>
+
+                        {/* Tools Section */}
+                        <div className="space-y-12">
+                            <motion.h2 
+                                className="text-3xl font-semibold text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-white/90"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.3 }}
                             >
-                                get in touch
-                            </Link>
-                            .
-                        </p>
+                                Contributors & Tools
+                            </motion.h2>
+                            <motion.div 
+                                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.4, duration: 0.6 }}
+                            >
+                                {tools.map((tool, index) => (
+                                    <motion.div
+                                        key={index}
+                                        className="group text-center space-y-4"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.1 * index }}
+                                    >
+                                        <tool.icon className={`text-5xl ${tool.color} mx-auto transform group-hover:scale-110 transition-transform duration-300`} />
+                                        <div className="space-y-2">
+                                            <h3 className="text-lg font-semibold group-hover:text-blue-400 transition-colors duration-300">
+                                                {tool.name}
+                                            </h3>
+                                            {tool.description && (
+                                                <p className="text-sm text-gray-400 leading-relaxed">
+                                                    {tool.description}
+                                                </p>
+                                            )}
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </motion.div>
+                        </div>
+
+                        {/* GitHub and Contact Sections */}
+                        <motion.div 
+                            className="space-y-16 text-center"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.6 }}
+                        >
+                            {/* GitHub Section */}
+                            <div className="space-y-4">
+                                <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/90">
+                                    Contribute on GitHub
+                                </h2>
+                                <p className="text-gray-300 max-w-2xl mx-auto">
+                                    This project is open-source! Check out the repository on GitHub and contribute to make it even better.
+                                </p>
+                                <Link
+                                    href="https://github.com/Adityaraizada1/Machine-Learning-Site"
+                                    target="_blank"
+                                    className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors duration-300 group"
+                                >
+                                    <FaGithub className="text-2xl" />
+                                    <span className="border-b border-blue-400/30 group-hover:border-blue-300">View on GitHub</span>
+                                </Link>
+                            </div>
+
+                            {/* Contact Section */}
+                            <div className="space-y-4">
+                                <h2 className="text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-b from-white to-white/90">
+                                    Have Questions?
+                                </h2>
+                                <p className="text-gray-300">
+                                    If you have any questions or would like to contribute to the project, feel free to{" "}
+                                    <Link
+                                        href="mailto:adityaraizada59@gmail.com"
+                                        className="text-blue-400 hover:text-blue-300 transition-colors duration-300 border-b border-blue-400/30 hover:border-blue-300"
+                                    >
+                                        get in touch
+                                    </Link>
+                                    .
+                                </p>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
                 <Footer />

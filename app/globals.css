@@ -10,6 +10,9 @@ body {
   .animate-spin-slow {
     animation: spin 2s linear infinite;
   }
+  .content-container {
+    @apply pt-16 md:pl-72; /* 72 matches the sidebar width (w-72) */
+  }
 }
 
 /* Keyframes for slower spin */
@@ -133,4 +136,30 @@ body {
   .starry-background::before {
     background-size: 10px 10px;
   }
+}
+
+/* Add margin for main content on desktop */
+@media (min-width: 768px) {
+  main {
+    margin-left: 18rem; /* 72px (w-72) converted to rem */
+  }
+}
+
+/* Sidebar scrollbar styles */
+.sidebar-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
 }
