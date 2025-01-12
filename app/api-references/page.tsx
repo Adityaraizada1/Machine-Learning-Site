@@ -170,7 +170,7 @@ const ApiReferences = () => {
 
           {/* API Categories */}
           <div className="space-y-24">
-            {filteredApis.map((category, idx) => (
+            {filteredApis.map((category) => (
               <motion.div 
                 key={category.category}
                 variants={itemVariants}
