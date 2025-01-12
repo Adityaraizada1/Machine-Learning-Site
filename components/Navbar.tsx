@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { FiLogOut, FiChevronDown } from "react-icons/fi";
+import { FiLogOut, FiChevronDown, FiBook, FiCode, FiFileText, FiTerminal } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Navbar,
@@ -77,6 +77,7 @@ export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { user, logout } = useUser();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [docsDropdownOpen, setDocsDropdownOpen] = useState(false);
 
   // Handle scroll effect
   useEffect(() => {
@@ -88,7 +89,17 @@ export default function App() {
   }, []);
 
   const menuItems = [
-    { name: "Docs", href: "/docs" },
+    { 
+      name: "Docs", 
+      href: "/docs",
+      hasDropdown: true,
+      dropdownItems: [
+        { name: "Documentation", href: "/docs", icon: FiBook },
+        { name: "API References", href: "/api-references", icon: FiCode },
+        { name: "Tutorials", href: "/soon", icon: FiFileText },
+        { name: "Examples", href: "/soon", icon: FiTerminal },
+      ]
+    },
     { name: "About", href: "/about" },
     { name: "Source", href: "/source" },
     { name: "Videos", href: "/video" },
@@ -125,17 +136,63 @@ export default function App() {
         </NavbarBrand>
       </NavbarContent>
 
-      {/* Desktop Menu */}
+      {/* Desktop Menu with Dropdown */}
       <NavbarContent className="hidden sm:flex gap-8" justify="center">
         {menuItems.map((item, index) => (
           <NavbarItem key={index}>
-            <Link
-              href={item.href}
-              className="text-white/90 hover:text-white transition-colors relative group py-1"
-            >
-              {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white/80 transition-all duration-300 group-hover:w-full" />
-            </Link>
+            {item.hasDropdown ? (
+              <div className="relative">
+                <motion.button
+                  onClick={() => setDocsDropdownOpen(!docsDropdownOpen)}
+                  className="flex items-center gap-1 text-white/90 hover:text-white transition-colors relative group py-1"
+                >
+                  <span className="relative">
+                    {item.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white/80 transition-all duration-300 group-hover:w-full" />
+                  </span>
+                  <motion.div
+                    animate={{ rotate: docsDropdownOpen ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="relative top-[1px]"
+                  >
+                    <FiChevronDown className="w-4 h-4" />
+                  </motion.div>
+                </motion.button>
+
+                <AnimatePresence>
+                  {docsDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute left-0 mt-2 w-56 bg-black/90 backdrop-blur-md border border-white/10 
+                        rounded-xl shadow-xl overflow-hidden"
+                    >
+                      {item.dropdownItems.map((dropdownItem, idx) => (
+                        <Link
+                          key={idx}
+                          href={dropdownItem.href}
+                          className="flex items-center gap-3 p-3 text-white/90 hover:text-white hover:bg-white/10 
+                            transition-all duration-200"
+                        >
+                          <dropdownItem.icon className="w-4 h-4" />
+                          {dropdownItem.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ) : (
+              <Link
+                href={item.href}
+                className="text-white/90 hover:text-white transition-colors relative group py-1"
+              >
+                {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white/80 transition-all duration-300 group-hover:w-full" />
+              </Link>
+            )}
           </NavbarItem>
         ))}
       </NavbarContent>
@@ -208,12 +265,61 @@ export default function App() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
             >
-              <Link
-                href={item.href}
-                className="text-white/90 hover:text-white text-lg transition-colors"
-              >
-                {item.name}
-              </Link>
+              {item.hasDropdown ? (
+                <div className="py-2">
+                  <button
+                    onClick={() => setDocsDropdownOpen(!docsDropdownOpen)}
+                    className="flex items-center justify-between w-full text-white/90 hover:text-white transition-colors"
+                  >
+                    <span className="text-lg">{item.name}</span>
+                    <motion.div
+                      animate={{ rotate: docsDropdownOpen ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <FiChevronDown />
+                    </motion.div>
+                  </button>
+
+                  <AnimatePresence>
+                    {docsDropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="mt-4 space-y-2 pl-4 border-l border-white/10">
+                          {item.dropdownItems.map((dropdownItem, idx) => (
+                            <motion.div
+                              key={idx}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: idx * 0.1 }}
+                            >
+                              <Link
+                                href={dropdownItem.href}
+                                className="flex items-center gap-3 py-2 pl-2 text-white/80 hover:text-white 
+                                  transition-colors rounded-lg hover:bg-white/5"
+                              >
+                                <dropdownItem.icon className="w-4 h-4" />
+                                <span>{dropdownItem.name}</span>
+                              </Link>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <Link
+                  href={item.href}
+                  className="block py-2 text-lg text-white/90 hover:text-white transition-colors"
+                >
+                  {item.name}
+                </Link>
+              )}
             </motion.div>
           </NavbarMenuItem>
         ))}
